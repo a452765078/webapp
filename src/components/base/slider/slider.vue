@@ -10,8 +10,8 @@
             <a href="">
                 <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Flmg.jj20.com%2Fup%2Fallimg%2F1114%2F041621122252%2F210416122252-1-1200.jpg&refer=http%3A%2F%2Flmg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669294888&t=db7a7a2bd34cfc2807f76674ed308b5f" alt="">
             </a>
-        </div>
-        <div class="slider-page">
+        </div> -->
+        <!-- <div class="slider-page">
             <a href="">
                 <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Flmg.jj20.com%2Fup%2Fallimg%2F1114%2F010421142927%2F210104142927-13-1200.jpg&refer=http%3A%2F%2Flmg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669294888&t=626fffdd6243222097af644f95b206c1" alt="">
             </a>
@@ -63,9 +63,9 @@
 </div>
 </template>
 <script>
-import BScroll from '@better-scroll/core'
-import Bslide from '@better-scroll/slide'
-BScroll.use(Bslide)
+import BScroll from '@better-scroll/core';
+import Bslide from '@better-scroll/slide';
+BScroll.use(Bslide);
 export default {
     name: 'sliderVue',
     data() {
@@ -95,12 +95,13 @@ export default {
     methods: {
         init() {
             this.scroll = new BScroll('.slider',{
+                click: true,
                 scrollX: true,
                 scrollY: false,
-                slide: true,
                 momentum: false,
                 bounce: false,
-                probeType: 3
+                probeType: 2,
+                slide: true,
             })
             let that = this
             this.scroll.on('slideWillChange', (page) => {
@@ -125,11 +126,10 @@ export default {
             width: 100%;
             height: 100%;
             display: inline-block;
-            transform: translate3d(0, 0, 0);
             a {
                 width: 100%;
                 height: 100%;
-                display: block;
+                display: inline-block;
                 color: $color-text;
                 img {
                     display: block;

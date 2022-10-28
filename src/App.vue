@@ -18,6 +18,8 @@ export default {
 @import '@/assets/scss/reset.scss';
 @import '@/assets/scss/variable.scss';
 #app {
+  width: 100vw;
+  height: 100vh;
   background-color: $color-background;
 }
 </style>
