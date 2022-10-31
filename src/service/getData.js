@@ -7,6 +7,11 @@ function getRecommend() {
     })
 }
 
+function getSingerList() {
+    return service.get('/api/getSingerList')
+}
+
 export default {
-    getRecommend
+    getRecommend,
+    getSingerList
 }

@@ -18,6 +18,12 @@ export default {
             bs:{}
         }
     },
+    props: {
+        probeType: {
+            type:Number,
+            default:0
+        }
+    },
     mounted() {
         this.init()
     },
@@ -26,18 +32,24 @@ export default {
     },
     methods: {
         init() {
+            let probeType = this.probeType
+            const that = this
             this.bs = new BScroll('.scrollWrapper',{
                 observeDOM: true ,// 开启 observe-dom 插件
-                probeType: 3
+                probeType
             })
-
+            if(probeType == 3) {
+                this.bs.on('scroll',function(pos) {
+                    that.$emit("scroll",pos.y)
+                })
+            }
         }
     }
 }
 </script>
 <style lang="scss">
 .scrollWrapper {
-    height: 600px;
+    height: 550px;
     overflow: hidden;
 }
 </style>

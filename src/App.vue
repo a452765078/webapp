@@ -8,6 +8,11 @@ import headerVue from '@/components/base/header/header.vue'
 import tab from '@/components/tab/tab.vue'
 export default {
   name: 'app',
+  data() {
+    return {
+  
+    }
+  },
   components: {
     headerVue,
     tab
